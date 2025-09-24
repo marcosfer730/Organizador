@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Dúvidas</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Central de Dúvidas</h1>
+    <button class="btn-add" onclick="openModal()">Nova Pergunta</button>
+  </header>
+      <main>
+    <section aria-labelledby="faqTitle">
+      <h2 id="faqTitle" class="visually-hidden">Lista de Perguntas</h2>
+      <div class="grid" id="faqGrid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Modal Nova Pergunta -->
+  <div class="modal" id="faqModal" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle" hidden>
+    <div class="modal-content">
+      <h2 id="faqModalTitle">Nova Pergunta</h2>
+      <form id="faqForm">
+        <label for="faqAuthor">Seu nome</label>
+        <input type="text" id="faqAuthor" placeholder="Ex: Maria Silva" required>
+
+        <label for="faqQuestion">Pergunta</label>
+        <textarea id="faqQuestion" rows="4" placeholder="Digite sua pergunta..." required></textarea>
+
+        <div class="modal-actions">
+          <button type="button" class="btn" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Responder -->
+  <div class="modal" id="answerModal" role="dialog" aria-modal="true" aria-labelledby="answerModalTitle" hidden>
+    <div class="modal-content">
+      <h2 id="answerModalTitle">Responder Pergunta</h2>
+      <form id="answerForm">
+        <label for="faqAnswer">Resposta</label>
+        <textarea id="faqAnswer" rows="4" placeholder="Digite sua resposta..." required></textarea>
+
+        <div class="modal-actions">
+          <button type="button" class="btn" onclick="closeAnswerModal()">Cancelar</button>
+          <button type="submit" class="btn btn-secondary">Responder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../static/js/duv.js"></script>
+</body>
+</html>

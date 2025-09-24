@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Finanças + Calculadora + Gráfico</title>
+  <link rel="stylesheet" href="../static/css/fin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</head>
+<body>
+  <header>
+    <h1>Finanças</h1>
+    <div>
+      <button class="btn-add" onclick="openModal()">Adicionar Item</button>
+      <button class="btn-calc" onclick="toggleCalculator()">Calculadora</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Tabela de Finanças -->
+    <table id="financeTable">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Gráfico de Pizza -->
+    <canvas id="financeChart"></canvas>
+
+    <!-- Calculadora Oculta -->
+    <div class="calculator" id="calculator">
+      <div class="calc-header">
+        <button class="calc-close" onclick="toggleCalculator()">×</button>
+      </div>
+      <input type="text" id="calcDisplay" class="calc-display" disabled>
+      <div class="calc-buttons">
+        <button onclick="clearCalc()">C</button>
+        <button onclick="clearEntry()">CE</button>
+        <button onclick="toggleSign()">+/-</button>
+        <button onclick="appendCalc('%')" class="operator">%</button>
+
+        <button onclick="appendCalc('7')">7</button>
+        <button onclick="appendCalc('8')">8</button>
+        <button onclick="appendCalc('9')">9</button>
+        <button onclick="appendCalc('/')" class="operator">÷</button>
+
+        <button onclick="appendCalc('4')">4</button>
+        <button onclick="appendCalc('5')">5</button>
+        <button onclick="appendCalc('6')">6</button>
+        <button onclick="appendCalc('*')" class="operator">×</button>
+
+        <button onclick="appendCalc('1')">1</button>
+        <button onclick="appendCalc('2')">2</button>
+        <button onclick="appendCalc('3')">3</button>
+        <button onclick="appendCalc('-')" class="operator">−</button>
+
+        <button onclick="appendCalc('0')">0</button>
+        <button onclick="appendCalc('.')">.</button>
+        <button onclick="calculate()" class="operator">=</button>
+        <button onclick="appendCalc('+')" class="operator">+</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Finanças -->
+  <div class="modal" id="finModal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Adicionar Item</h2>
+      <input type="text" id="itemDesc" placeholder="Descrição">
+      <input type="date" id="itemDate">
+      <input type="number" id="itemValue" placeholder="Valor">
+      <div class="modal-actions">
+        <button class="btn-save" onclick="saveItem()">Salvar</button>
+        <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../static/js/fin.js"></script>
+</body>
+</html>

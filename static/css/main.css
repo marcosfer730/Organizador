@@ -1,0 +1,87 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 70px; /* espaço para navbar fixa */
+  min-height: 100vh;
+}
+
+/* Títulos */
+h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #222;
+}
+
+/* Container dos cards */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Cards de acesso */
+.access-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: #333;
+}
+
+.access-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.access-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.access-card p {
+  font-size: 0.95em;
+  color: #666;
+}
+
+/* Navbar ativa */
+.nav-link.active {
+  font-weight: bold;
+  color: #0d6efd !important;
+}
+
+/* Seções de conteúdo (para navegação dinâmica) */
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

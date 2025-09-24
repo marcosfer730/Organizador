@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Principal</title>
+  <link rel="stylesheet" href="../static/css/base.css">
+</head>
+<body>
+  <!-- Navbar fixa -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="main.html" target="conteudo" class="logo">Organizador</a>
+    </div>
+
+    <!-- Botão hambúrguer -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <ul class="navbar-right">
+      <li><a href="main.html" target="conteudo">Início</a></li>
+      <li><a href="org.html" target="conteudo">Organizador</a></li>
+      <li><a href="fin.html" target="conteudo">Finanças</a></li>
+      <li><a href="duv.html" target="conteudo">Central de Dúvidas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Layout flex -->
+  <div class="page-container">
+    <iframe name="conteudo" src="main.html" class="content-frame"></iframe>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>&copy; 2024. Todos os direitos reservados.</p>
+      <p>Desenvolvido por Marcos</p>
+    </footer>
+  </div>
+
+  <script src="../static/js/nav.js"></script>
+</body>
+</html>
